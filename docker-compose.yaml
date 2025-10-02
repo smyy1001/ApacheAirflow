@@ -37,7 +37,7 @@ x-airflow-common:
     - /var/run/docker.sock:/var/run/docker.sock
     
     # mounts for scraper projects
-    - ${BSKY_PATH}:/opt/projects/scraper
+    - ${BSKY_PATH}:/opt/projects/scraper2
     - ${NSOSYAL_PATH}:/opt/projects/scraper
 
 

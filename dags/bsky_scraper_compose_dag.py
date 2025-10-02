@@ -7,7 +7,7 @@ from airflow import DAG
 from airflow.operators.bash import BashOperator
 from airflow.utils.trigger_rule import TriggerRule
 
-PROJECT_DIR = "/opt/projects/scraper"       # docker-compose'daki isim
+PROJECT_DIR = "/opt/projects/scraper2"       # docker-compose'daki isim
 COMPOSE_FILE = "docker-compose.yaml"
 PROJECT_NAME = "bsky_scraper_airflow"
 
