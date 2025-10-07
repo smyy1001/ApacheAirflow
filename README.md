@@ -10,12 +10,12 @@
 
 ## 2) `.env` dosyasını ayarlayın
 
-Proje kök dizininde bir `.env` oluşturup ihtiyacınıza göre doldurun. Örnek (en azından şunları verin):
+Proje kök dizininde bulunan `.env` dosyasını ihtiyacınıza göre doldurun.
 
 ```dotenv
 # Airflow servisleri için (isteğe bağlı ama önerilir)
 HOST_UID=1000
-HOST_GID=1000
+HOST_GID=0
 
 # Uygulama çıktı klasörleri (host tarafında bu klasörler oluşturulur)
 JSON_OUTPUT_DIR=bsky_data
