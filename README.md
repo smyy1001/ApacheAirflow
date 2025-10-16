@@ -43,3 +43,17 @@ Kurulum DAG’ı tamamlandıktan sonra diğer DAG’ları **istediğiniz zaman**
 BSky Trendler triggerdan sonra her 5 dk'de bir çalışır.
 
 ---
+
+## 6) 🔍 Airflow’da Logları Görüntüleme (Son Sürüm)
+
+Airflow 2.9+ sürümlerinde her task’in logları artık arayüzden doğrudan erişilebilir:
+
+* DAGs sekmesinden ilgili DAG’i aç.
+
+* Graph View veya Grid View’da task’in üstüne tıkla.
+
+* Açılan pencerede “Logs” sekmesini seç.
+
+> Gerekirse alt kısımda “Download Log File” ya da “View Raw Logs” düğmesini kullan.
+
+💡 Eğer “Log not found” hatası alıyorsan, AIRFLOW__LOGGING__BASE_LOG_FOLDER ve AIRFLOW__CORE__REMOTE_LOGGING ayarlarını kontrol et.
