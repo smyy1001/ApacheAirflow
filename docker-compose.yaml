@@ -18,6 +18,7 @@ x-airflow-common:
     AIRFLOW__CORE__FERNET_KEY: ''
     AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
     AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+    AIRFLOW__LOGGING__AUTHENTICATE: "False"
     # AIRFLOW__CORE__EXECUTION_API_SERVER_URL: 'http://airflow-apiserver:8080/execution/'
     # AIRFLOW_CONN_ELASTICSEARCH_HTTP: "https://elastic:ankara123@192.168.1.66:9200?verify=false"
     AIRFLOW__SCHEDULER__ENABLE_HEALTH_CHECK: 'true'
