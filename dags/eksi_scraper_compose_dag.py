@@ -7,9 +7,9 @@ from airflow import DAG
 from airflow.operators.bash import BashOperator
 from airflow.utils.trigger_rule import TriggerRule
 
-PROJECT_DIR = "/opt/projects/scraper3"       # docker-compose'daki isim
+PROJECT_DIR = "/opt/projects/scraper4"
 COMPOSE_FILE = "docker-compose.yaml"
-PROJECT_NAME = "telegram_scraper_airflow"
+PROJECT_NAME = "eksi_feed_scraper_airflow"
 
 default_args = {
     "owner": "airflow",
@@ -19,7 +19,7 @@ default_args = {
 }
 
 with DAG(
-    dag_id="telegram_scraper_compose_dag",
+    dag_id="eksi_feed_scraper_compose_dag",
     description="Run the scraping project via docker compose",
     start_date=datetime(2025, 9, 1),
     schedule_interval=None,
@@ -32,7 +32,7 @@ with DAG(
     set -euo pipefail
     cd "{PROJECT_DIR}"
 
-    docker compose -p "{PROJECT_NAME}" -f "{COMPOSE_FILE}" up --build --force-recreate --abort-on-container-exit
+    docker compose -p "{PROJECT_NAME}" -f "{COMPOSE_FILE}" up --build scrapy-kanal --abort-on-container-exit
     """.strip()
 
 

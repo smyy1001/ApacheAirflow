@@ -38,6 +38,7 @@ x-airflow-common:
     - /var/run/docker.sock:/var/run/docker.sock
     
     # mounts for scraper projects
+    - ${EKSI_PATH}:/opt/projects/scraper4
     - ${TG_PATH}:/opt/projects/scraper3
     - ${BSKY_PATH}:/opt/projects/scraper2
     - ${NSOSYAL_PATH}:/opt/projects/scraper
@@ -77,6 +78,10 @@ services:
       retries: 50
       start_period: 30s
     restart: always
+
+
+# image: mirror.gcr.io/library/redis:7.2-bookworm
+# image: mirror.gcr.io/library/postgres:16-bookworm
 
   # airflow-apiserver:
   #   <<: *airflow-common
