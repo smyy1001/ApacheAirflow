@@ -9,7 +9,7 @@ from airflow.utils.trigger_rule import TriggerRule
 
 PROJECT_DIR = "/opt/projects/scraper"       # docker-compose'daki isim
 COMPOSE_FILE = "docker-compose.yaml"
-PROJECT_NAME = "nsosyal_scraper_airflow"
+PROJECT_NAME = "nsosyal_trends_scraper_airflow"
 
 default_args = {
     "owner": "airflow",
@@ -19,10 +19,10 @@ default_args = {
 }
 
 with DAG(
-    dag_id="nsosyal_scraper_compose_dag",
+    dag_id="nsosyal_trends_scraper_compose_dag",
     description="Run the scraping project via docker compose",
-    start_date=datetime(2025, 9, 1),
-    schedule_interval=None,
+    start_date=datetime(2025, 10, 12),
+    schedule_interval="*/5 * * * *",
     catchup=False,
     default_args=default_args,
     dagrun_timeout=timedelta(hours=6),
@@ -32,7 +32,7 @@ with DAG(
     set -euo pipefail
     cd "{PROJECT_DIR}"
 
-    docker compose -p "{PROJECT_NAME}" -f "{COMPOSE_FILE}" up --build nsosyal_scrapy_keyword --abort-on-container-exit
+    docker compose -p "{PROJECT_NAME}" -f "{COMPOSE_FILE}" up --build nsosyal_scrapy_trend --abort-on-container-exit
     """.strip()
 
 
