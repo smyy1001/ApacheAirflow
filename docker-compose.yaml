@@ -38,10 +38,11 @@ x-airflow-common:
     - /var/run/docker.sock:/var/run/docker.sock
     
     # mounts for scraper projects
-    - ${EKSI_PATH}:/opt/projects/scraper4
-    - ${TG_PATH}:/opt/projects/scraper3
-    - ${BSKY_PATH}:/opt/projects/scraper2
     - ${NSOSYAL_PATH}:/opt/projects/scraper
+    - ${BSKY_PATH}:/opt/projects/scraper2
+    - ${TG_PATH}:/opt/projects/scraper3
+    - ${EKSI_PATH}:/opt/projects/scraper4
+    - ${QUORA_PATH}:/opt/projects/scraper5
 
 
   depends_on:
